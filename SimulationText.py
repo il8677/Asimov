@@ -1,9 +1,16 @@
 import random
 
 const_INITIAL_PEOPLE = 4
+const_INITIAL_FAMILIES = 2
 const_DAY_LENGTH = 5000
 class World:
     time = 0
+class Family:
+    householdWealth = 0
+    identifier=0
+    def __init__(self, identifier):
+        self.identifier=identifier
+
 class Person:
     name=""
     emotion = 0 #0 happy, 1 unhappy, 2 stressed
@@ -11,8 +18,8 @@ class Person:
     education = 0
     canWork = True
     age = 0
+    money=0
 
-    familyid = 0
     id=0
 
     destination = ""
@@ -74,12 +81,29 @@ class Person:
             self.maxHealth = 100 - (self.age / self.const_AGE_LENGTH)
 
         self.findDestination()
-        if(self.destination == "S")
+        if(self.destination == "S"):
+            self.education+=1
+            if self.educated>1000:
+                self.educated=True
+                self.canWork=True
+        if(self.age >= 1002):
+            self.canWork = True
+
+        if(self.destination == "W"):
+            if(self.educated):
+                self.money+=2
+            else:
+                self.money+=1
+
 people = []
 world = World()
 names = open("names.txt", "r").read().split("\n")
 for i in range(0, const_INITIAL_PEOPLE):
     people.append(Person(names[random.randint(0, 49)],i))
+
+for i in range(0, const_INITIAL_FAMILIES):
+    
+
 def update():
     for p in people:
         p.update()
