@@ -1,0 +1,11 @@
+This application was developed in python 3.50 by il8677.
+
+There are two files here
+
+
+Simulation.py: A graphical version ****DEPRECATED****
+
+SimulationText.py: A text version ****IN DEVELOPMENT****
+
+This program is made to simulate a society built by me. The long term idea is to build an AI that can predict the people in the simulated peoples
+action and perhaps manipulate them
